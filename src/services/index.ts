@@ -6,4 +6,5 @@ export { exercisesService } from './exercises.service';
 export { evaluationsService } from './evaluations.service';
 export { financesService } from './finances.service';
 export { feedbackService } from './feedback.service';
+export { trainingPlansService } from './trainingPlans.service';
 

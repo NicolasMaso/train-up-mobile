@@ -101,10 +101,17 @@ export default function StudentDetailScreen({ navigation, route }: any) {
         <View style={styles.actionsGrid}>
           <TouchableOpacity
             style={styles.actionButton}
-            onPress={() => navigation.navigate('CreateWorkout', { studentId })}
+            onPress={() => navigation.navigate('CreateTrainingPlan', { studentId })}
+          >
+            <Text style={styles.actionIcon}>➕</Text>
+            <Text style={styles.actionLabel}>Novo Plano</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.actionButton}
+            onPress={() => navigation.navigate('ManageTrainingPlans', { studentId, studentName: student?.name })}
           >
             <Text style={styles.actionIcon}>📋</Text>
-            <Text style={styles.actionLabel}>Novo Treino</Text>
+            <Text style={styles.actionLabel}>Gerenciar Planos</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.actionButton}

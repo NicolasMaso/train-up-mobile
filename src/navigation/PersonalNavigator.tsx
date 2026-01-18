@@ -9,6 +9,12 @@ import {
   StudentDetailScreen,
   FeedbackListScreen,
   FeedbackDetailScreen,
+  ExercisesListScreen,
+  CreateExerciseScreen,
+  EditExerciseScreen,
+  CreateWorkoutScreen,
+  CreateTrainingPlanScreen,
+  ManageTrainingPlansScreen,
 } from '../screens/personal';
 
 const Tab = createBottomTabNavigator();
@@ -25,6 +31,9 @@ function StudentsStack() {
       <Stack.Screen name="StudentsList" component={StudentsListScreen} />
       <Stack.Screen name="AddStudent" component={AddStudentScreen} />
       <Stack.Screen name="StudentDetail" component={StudentDetailScreen} />
+      <Stack.Screen name="CreateWorkout" component={CreateWorkoutScreen} />
+      <Stack.Screen name="CreateTrainingPlan" component={CreateTrainingPlanScreen} />
+      <Stack.Screen name="ManageTrainingPlans" component={ManageTrainingPlansScreen} />
     </Stack.Navigator>
   );
 }
@@ -41,6 +50,9 @@ function DashboardStack() {
       <Stack.Screen name="AddStudent" component={AddStudentScreen} />
       <Stack.Screen name="StudentDetail" component={StudentDetailScreen} />
       <Stack.Screen name="FeedbackDetail" component={FeedbackDetailScreen} />
+      <Stack.Screen name="CreateWorkout" component={CreateWorkoutScreen} />
+      <Stack.Screen name="CreateTrainingPlan" component={CreateTrainingPlanScreen} />
+      <Stack.Screen name="ManageTrainingPlans" component={ManageTrainingPlansScreen} />
     </Stack.Navigator>
   );
 }
@@ -55,6 +67,21 @@ function FeedbackStack() {
     >
       <Stack.Screen name="FeedbackList" component={FeedbackListScreen} />
       <Stack.Screen name="FeedbackDetail" component={FeedbackDetailScreen} />
+    </Stack.Navigator>
+  );
+}
+
+function ExercisesStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        contentStyle: { backgroundColor: '#0f0f0f' },
+      }}
+    >
+      <Stack.Screen name="ExercisesList" component={ExercisesListScreen} />
+      <Stack.Screen name="CreateExercise" component={CreateExerciseScreen} />
+      <Stack.Screen name="EditExercise" component={EditExerciseScreen} />
     </Stack.Navigator>
   );
 }
@@ -94,16 +121,6 @@ const placeholderStyles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-
-function ExercisesScreen() {
-  return (
-    <PlaceholderScreen
-      icon="🏋️"
-      title="Exercícios"
-      subtitle="Biblioteca de exercícios em breve"
-    />
-  );
-}
 
 function ProfileScreen() {
   return (
@@ -163,7 +180,7 @@ export default function PersonalNavigator() {
       />
       <Tab.Screen
         name="Exercises"
-        component={ExercisesScreen}
+        component={ExercisesStack}
         options={{
           tabBarIcon: ({ color }) => (
             <Text style={{ fontSize: 24 }}>🏋️</Text>

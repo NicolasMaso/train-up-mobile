@@ -13,8 +13,8 @@ import {
 import { useAuthStore } from '../../contexts';
 
 export default function LoginScreen({ navigation }: any) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('juliassilveirazt@gmail.com');
+  const [password, setPassword] = useState('123456');
   const { login, isLoading } = useAuthStore();
 
   const handleLogin = async () => {

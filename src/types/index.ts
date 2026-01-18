@@ -57,12 +57,28 @@ export interface Workout {
   id: string;
   name: string;
   description?: string;
+  trainingPlanId?: string;
   studentId: string;
   personalId: string;
-  scheduledDate?: string;
   completedAt?: string;
   exercises: WorkoutExercise[];
   student?: { id: string; name: string };
+  personal?: { id: string; name: string };
+  trainingPlan?: { id: string; name: string; startDate: string; endDate: string };
+  createdAt: string;
+}
+
+export interface TrainingPlan {
+  id: string;
+  name: string;
+  description?: string;
+  studentId: string;
+  personalId: string;
+  startDate: string;
+  endDate: string;
+  isActive: boolean;
+  workouts: Workout[];
+  student?: { id: string; name: string; avatar?: string };
   personal?: { id: string; name: string };
   createdAt: string;
 }

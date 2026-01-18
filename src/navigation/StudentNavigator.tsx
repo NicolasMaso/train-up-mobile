@@ -4,7 +4,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Text, View, StyleSheet } from 'react-native';
 import {
   DashboardScreen,
-  WorkoutsListScreen,
+  TrainingPlansListScreen,
+  TrainingPlanDetailScreen,
   CreateFeedbackScreen,
   MyFeedbacksScreen,
   FeedbackDetailScreen,
@@ -13,7 +14,7 @@ import {
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-function WorkoutsStack() {
+function TrainingPlansStack() {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -21,7 +22,8 @@ function WorkoutsStack() {
         contentStyle: { backgroundColor: '#0f0f0f' },
       }}
     >
-      <Stack.Screen name="WorkoutsList" component={WorkoutsListScreen} />
+      <Stack.Screen name="TrainingPlansList" component={TrainingPlansListScreen} />
+      <Stack.Screen name="TrainingPlanDetail" component={TrainingPlanDetailScreen} />
       <Stack.Screen name="CreateFeedback" component={CreateFeedbackScreen} />
     </Stack.Navigator>
   );
@@ -124,13 +126,13 @@ export default function StudentNavigator() {
         }}
       />
       <Tab.Screen
-        name="Workouts"
-        component={WorkoutsStack}
+        name="TrainingPlans"
+        component={TrainingPlansStack}
         options={{
           tabBarIcon: ({ color }) => (
             <Text style={{ fontSize: 24 }}>📋</Text>
           ),
-          tabBarLabel: 'Treinos',
+          tabBarLabel: 'Planos',
         }}
       />
       <Tab.Screen

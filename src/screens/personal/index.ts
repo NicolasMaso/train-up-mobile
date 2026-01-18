@@ -4,4 +4,9 @@ export { default as AddStudentScreen } from './AddStudentScreen';
 export { default as StudentDetailScreen } from './StudentDetailScreen';
 export { default as FeedbackListScreen } from './FeedbackListScreen';
 export { default as FeedbackDetailScreen } from './FeedbackDetailScreen';
-
+export { default as ExercisesListScreen } from './ExercisesListScreen';
+export { default as CreateExerciseScreen } from './CreateExerciseScreen';
+export { default as EditExerciseScreen } from './EditExerciseScreen';
+export { default as CreateWorkoutScreen } from './CreateWorkoutScreen';
+export { default as CreateTrainingPlanScreen } from './CreateTrainingPlanScreen';
+export { default as ManageTrainingPlansScreen } from './ManageTrainingPlansScreen';
